@@ -24,6 +24,7 @@ export default function index({ navigation } : Props) {
             const {user} = userCredentials
             if(user){
                 dispatch({type: 'login-success', payload: user})
+                navigation.navigate('UserWelcome')
             }
         })
         .catch(error =>{

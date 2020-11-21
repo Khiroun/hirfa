@@ -16,7 +16,7 @@ import Register from "./Register";
 
 
 
-export default function index() {
+export default function index({navigation}) {
   const [role, setRole] = useState("demandeur");
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
@@ -91,7 +91,7 @@ export default function index() {
       setPhone={setPhone}
       show={show}
       showDatepicker={showDatepicker}
-      
+      navigation={navigation}
       errorMessage={errorMessage}
       role={role}
       setRole={setRole} />

@@ -9,6 +9,7 @@ import Login from "./src/screens/Login";
 import Map from "./src/screens/User/Map";
 import GettingStarted from "./src/screens/GettingStarted";
 import { AppProvider } from "./AppContext";
+import Welcome from "./src/screens/User/Welcome";
 
 export type RootStackParamList = {
   GettingStarted: undefined,
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   Login: undefined,
   SignUp: undefined
   Map: undefined,
+  UserWelcome: undefined
 }
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
@@ -31,12 +33,23 @@ export default () => {
           options={{ headerShown: false }}
         />
         <Drawer.Screen
+          name="UserWelcome"
+          component={Welcome}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
           name="Login"
           component={Login}
           options={{ headerShown: false }}
         />
-        <Drawer.Screen name="UserMain" component={UserMain} />
-        <Drawer.Screen name="Map" component={Map} />
+        <Drawer.Screen name="UserMain" component={UserMain} 
+          options={{ headerShown: false }}
+        
+        />
+        <Drawer.Screen name="Map" component={Map}
+          options={{ headerShown: false }}
+        
+        />
         <Drawer.Screen
           name="SignUp"
           component={Register}

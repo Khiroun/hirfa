@@ -9,19 +9,20 @@ import {
   Text,
 } from "react-native";
 import { RootStackParamList } from "../../../Screens";
+import theme from "../../theme";
 
 const DATA = [
   {
     id: "1",
-    title: "Job 1",
+    title: "Plombier",
   },
   {
     id: "2",
-    title: "Job 2",
+    title: "Maçon",
   },
   {
     id: "3",
-    title: "Job 3",
+    title: "Peintre",
   },
 ];
 
@@ -59,10 +60,26 @@ export default function Main({ navigation } : Props) {
         data={jobs}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        style={{marginTop: 50}}
       />
       {selectedJob && (
-        <TouchableOpacity onPress={() => navigation.navigate("Map")}>
-          <Text>Trouvez des {selectedJob} prets de vous</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Map")}
+          style={{
+            marginBottom: 50,
+            backgroundColor: theme.COLORS.PRIMARY,
+            height: 50,
+            justifyContent: "center",
+            marginHorizontal: 20,
+            borderRadius: 10
+          }}
+
+        >
+          <Text style={{textAlign: "center", fontSize: 20, color:"white"}}>
+            Trouvez un
+            <Text style={{color: theme.COLORS.SUCCESS, fontWeight: "bold"}}> {selectedJob} </Text> 
+            prets de chez vous
+            </Text>
         </TouchableOpacity>
       )}
     </SafeAreaView>
@@ -73,6 +90,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
+    justifyContent: "space-between"
   },
   item: {
     padding: 20,

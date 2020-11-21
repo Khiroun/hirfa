@@ -8,7 +8,7 @@ import DateTimePicker, { Event } from "@react-native-community/datetimepicker";
 export default function Register({errorMessage, role, setRole, nom, setNom, email,
     setEmail, password, setPassword, confirmPassword, setConfirmPassword,
     showDatepicker, date, show, address, setAddress, phone, setPhone, onChange,
-    prenom, setPrenom, handleSubmit}) {
+    prenom, setPrenom, handleSubmit, navigation}) {
     return (
     <ScrollView>
         <Text style={styles.title}>Inscription!</Text>
@@ -130,6 +130,15 @@ export default function Register({errorMessage, role, setRole, nom, setNom, emai
             <Text style={styles.text}>Continuer</Text>
           </TouchableOpacity>
         </View>
+        <View>
+
+        <TouchableOpacity
+          style={styles.signUpButton}
+          onPress={() => navigation.navigate("SignUp")}
+        >
+          <Text style={styles.signUpButtonText}>Créer un compte</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }
@@ -181,5 +190,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20
   },
-  
+signUpButtonText:{
+    color: "#000",
+    textAlign: "center"
+  }  
 });

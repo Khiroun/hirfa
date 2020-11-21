@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
+import { ActivityIndicator, Text, View } from "react-native";
+
+import theme from "../../theme";
 
 export default function Main() {
   const [granted, setGranted] = useState(false);
@@ -37,5 +39,23 @@ export default function Main() {
     }
   }, [granted]);
   console.log({ location });
-  return <MapView region={location} style={{ height: 400, width: "100%" }} />;
+  return (
+    <View>
+      <MapView region={location} style={{ height: 400, width: "100%" }}>
+        <Marker coordinate={location} />
+      </MapView>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginHorizontal: 20,
+          marginTop: 50,
+        }}
+      >
+        <Text style={{ fontSize: 20 }}>Recherche de jobbeurs en cours</Text>
+        <ActivityIndicator size={50} color={theme.COLORS.SUCCESS} />
+      </View>
+    </View>
+  );
 }
