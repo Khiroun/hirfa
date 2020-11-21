@@ -2,7 +2,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import theme from "../theme";
 
-const MyButton : React.FC<{name: string | undefined, backgroundColor: string,}> = ({ children,name,backgroundColor })=> {
+const MyButton : React.FC<{name: string, backgroundColor: string,}> = ({ children,name,backgroundColor })=> {
   return (
     <FontAwesome.Button
       color={theme.COLORS.WHITE}
