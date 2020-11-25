@@ -4,7 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // screens
 import Register from "./src/screens/Register";
-import UserMain from "./src/screens/User/Main";
+import User from "./src/screens/User";
 import Login from "./src/screens/Login";
 import Map from "./src/screens/User/Map";
 import GettingStarted from "./src/screens/GettingStarted";
@@ -13,7 +13,7 @@ import Welcome from "./src/screens/User/Welcome";
 
 export type RootStackParamList = {
   GettingStarted: undefined,
-  UserMain: undefined,
+  User: undefined,
   Login: undefined,
   SignUp: undefined
   Map: undefined,
@@ -42,7 +42,7 @@ export default () => {
           component={Login}
           options={{ headerShown: false }}
         />
-        <Drawer.Screen name="UserMain" component={UserMain} 
+        <Drawer.Screen name="User" component={User} 
           options={{ headerShown: false }}
         
         />

@@ -18,7 +18,7 @@ export default function Welcome({navigation}) {
       </View>
       <TouchableOpacity
         style={styles.GettingStarted}
-        onPress={() => navigation.navigate("UserMain")}
+        onPress={() => navigation.navigate("User")}
       >
         <Text style={styles.text}>Trouvez des Jobbeurs prets de chez vous!!</Text>
       </TouchableOpacity>

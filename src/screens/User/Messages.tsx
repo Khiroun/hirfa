@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export default function Profile() {
+export default function Post() {
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
+            <Text>Messages</Text>
         </View>
     )
 }

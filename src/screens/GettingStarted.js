@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Image,
@@ -7,10 +7,15 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-
+import firebase from "../../firebaseClient";
 import bgImage from "../../assets/background.jpg";
 
 function GettingStarted({ navigation }) {
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      navigation.navigate(user ? "User" : "Login");
+    });
+  }, []);
   return (
     <ImageBackground source={bgImage} style={styles.backGroundContainer}>
       <View style={styles.logoContainer}>

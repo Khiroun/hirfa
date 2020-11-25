@@ -75,7 +75,7 @@ export default function index({navigation}) {
       nom={nom}
       setNom={setNom}
       prenom={prenom}
-      setPrenom={setPassword}
+      setPrenom={setPrenom}
       email={email}
       setEmail={setEmail}
       address={address}

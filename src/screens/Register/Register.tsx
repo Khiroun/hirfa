@@ -89,7 +89,8 @@ export default function Register({errorMessage, role, setRole, nom, setNom, emai
         </View>
         <View style={styles.inputContainer}>
           <TouchableOpacity onPress={showDatepicker}
-            style={{backgroundColor: theme.COLORS.GREY, width: 300, height: 50, justifyContent: 'center', borderRadius: 10}}
+            style={{backgroundColor: theme.COLORS.GREY,
+              width: 300, height: 50, justifyContent: 'center', borderRadius: 45}}
             >
             <Text style={styles.text}>Date de naissance</Text>
           </TouchableOpacity>
